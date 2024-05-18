@@ -12,6 +12,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 HF_TOKEN = os.getenv('HF_TOKEN')
+hf_api_token = st.secrets["huggingface_api_token"]
+
 
 # Define the Pydantic models
 class NearbyPlace(BaseModel):
@@ -52,7 +54,7 @@ llm = HuggingFaceTextGenInference(
     inference_server_url="https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3-8B-Instruct",
     server_kwargs={
         "headers": {
-            "Authorization": f"Bearer {HF_TOKEN}",
+            "Authorization": f"Bearer {hf_api_token}",
             "Content-Type": "application/json",
         }
     },
