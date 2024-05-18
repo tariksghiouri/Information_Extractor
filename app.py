@@ -52,7 +52,7 @@ llm = HuggingFaceTextGenInference(
     inference_server_url="https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3-8B-Instruct",
     server_kwargs={
         "headers": {
-            "Authorization": f"Bearer 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",
+            "Authorization": f"Bearer {HF_TOKEN}",
             "Content-Type": "application/json",
         }
     },
